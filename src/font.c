@@ -8,17 +8,16 @@ letra* init_alphabet(){
     letra* alphabet = malloc(26*sizeof(struct letter));
     int indx;
 
-    letra a;
-	memcpy(a.graffiti[0], "        ", strlen("        ")+1);
-	memcpy(a.graffiti[1], "_____   ", strlen("_____   ")+1);
-	memcpy(a.graffiti[2], "\\__  \\  ", strlen("\\__  \\  ")+1);
-	memcpy(a.graffiti[3], " / __ \\_", strlen(" / __ \\_")+1);
-	memcpy(a.graffiti[4], "(____  /", strlen("(____  /")+1);
-	memcpy(a.graffiti[5], "     \\/ ", strlen("     \\/ ")+1);
+    letra a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z;
+	strcpy(a.graffiti[0], "        ");
+	strcpy(a.graffiti[1], "_____   ");
+	strcpy(a.graffiti[2], "\\__  \\  ");
+	strcpy(a.graffiti[3], " / __ \\_");
+	strcpy(a.graffiti[4], "(____  /");
+	strcpy(a.graffiti[5], "     \\/ ");
 
 	alphabet[0] = a;
 
-    letra b;
 	strcpy(b.graffiti[0], "___.    ");
 	strcpy(b.graffiti[1], "\\_ |__  ");
 	strcpy(b.graffiti[2], " | __ \\ ");
@@ -27,46 +26,269 @@ letra* init_alphabet(){
 	strcpy(b.graffiti[5], "     \\/ ");
 
 	alphabet[1] = b;
-    letra c;
-    char letter_c [6][8] =
-    {
-	"        ",
-	"  ____  ",
-	"_/ ___\\ ",
-	"\\  \\___ ",
-	" \\___  >",
-	"     \\/ "
-    };
- //   strcpy(c.graffiti, letter_c);
 
-    alphabet[2] = c;
-    letra d;
-    letra e;
-    letra f;
-    letra g;
-    letra h;
-    letra i;
-    letra j;
-    letra k;
-    letra l;
-    letra m;
-    letra n;
-    letra o;
-    letra p;
-    letra q;
-    letra r;
-    letra s;
-    letra t;
-    letra u;
-    letra v;
-    letra w;
-    letra x;
-    letra y;
-    letra z;
+	strcpy(c.graffiti[0], "        ");
+	strcpy(c.graffiti[1], "  ____  ");
+	strcpy(c.graffiti[2], "_/ ___\\ ");
+	strcpy(c.graffiti[3], "\\  \\___ ");
+	strcpy(c.graffiti[4], " \\___  >");
+	strcpy(c.graffiti[5], "     \\/ ");
+
+	alphabet[2] = c;
+
+	strcpy(d.graffiti[0], "    .___");
+	strcpy(d.graffiti[1], "  __| _/");
+	strcpy(d.graffiti[2], " / __ | ");
+	strcpy(d.graffiti[3], "/ /_/ | ");
+	strcpy(d.graffiti[4], "\\____ | ");
+	strcpy(d.graffiti[5], "     \\/ ");
+
+	alphabet[3] = d;
+
+	strcpy(e.graffiti[0], "        ");
+	strcpy(e.graffiti[1], "  ____  ");
+	strcpy(e.graffiti[2], "_/ __ \\ ");
+	strcpy(e.graffiti[3], "\\  ___/ ");
+	strcpy(e.graffiti[4], " \\___  >");
+	strcpy(e.graffiti[5], "     \\/ ");
+
+	alphabet[4] = e;
+
+	strcpy(f.graffiti[0], "  _____ ");
+	strcpy(f.graffiti[1], "_/ ____\\");
+	strcpy(f.graffiti[2], "\\   __\\ ");
+	strcpy(f.graffiti[3], " |  |   ");
+	strcpy(f.graffiti[4], " |__|   ");
+	strcpy(f.graffiti[5], "        ");
+
+	alphabet[5] = f;
+
+	strcpy(g.graffiti[0], "        ");
+	strcpy(g.graffiti[1], "   ____  ");
+	strcpy(g.graffiti[2], "  / ___\\ ");
+	strcpy(g.graffiti[3], " / /_/  >");
+	strcpy(g.graffiti[4], " \\___  / ");
+	strcpy(g.graffiti[5], "/_____/  ");
+
+	alphabet[6] = g;
+
+	strcpy(h.graffiti[0], ".__     ");
+	strcpy(h.graffiti[1], "|  |__  ");
+	strcpy(h.graffiti[2], "|  |  \\ ");
+	strcpy(h.graffiti[3], "|   Y  \\");
+	strcpy(h.graffiti[4], "|___|  /");
+	strcpy(h.graffiti[5], "     \\/ ");
+
+	alphabet[7] = h;
+
+	strcpy(i.graffiti[0], ".__ ");
+	strcpy(i.graffiti[1], "|__|");
+	strcpy(i.graffiti[2], "|  |");
+	strcpy(i.graffiti[3], "|  |");
+	strcpy(i.graffiti[4], "|__|");
+	strcpy(i.graffiti[5], "    ");
+
+	alphabet[8] = i;
+
+	strcpy(j.graffiti[0], "     __ ");
+	strcpy(j.graffiti[1], "    |__|");
+	strcpy(j.graffiti[2], "    |  |");
+	strcpy(j.graffiti[3], "    |  |");
+	strcpy(j.graffiti[4], "/\\__|  |");
+	strcpy(j.graffiti[5], "\\______|");
+
+	alphabet[9] = j;
+
+	strcpy(k.graffiti[0], " __    ");
+	strcpy(k.graffiti[1], "|  | __");
+	strcpy(k.graffiti[2], "|  |/ /");
+	strcpy(k.graffiti[3], "|    < ");
+	strcpy(k.graffiti[4], "|__|_ \\");
+	strcpy(k.graffiti[5], "     \\/");
+
+	alphabet[10] = k;
+
+	strcpy(l.graffiti[0], ".__   ");
+	strcpy(l.graffiti[1], "|  |  ");
+	strcpy(l.graffiti[2], "|  |  ");
+	strcpy(l.graffiti[3], "|  |  ");
+	strcpy(l.graffiti[4], "|  |__");
+	strcpy(l.graffiti[5], "|____/");
+
+	alphabet[11] = l;
+
+	strcpy(m.graffiti[0], "         ");
+	strcpy(m.graffiti[1], "  _____  ");
+	strcpy(m.graffiti[2], " /     \\ ");
+	strcpy(m.graffiti[3], "|  Y Y  \\");
+	strcpy(m.graffiti[4], "|__|_|  /");
+	strcpy(m.graffiti[5], "      \\/ ");
+
+	alphabet[12] = m;
+
+	strcpy(n.graffiti[0], "        ");
+	strcpy(n.graffiti[1], "  ____  ");
+	strcpy(n.graffiti[2], " /    \\ ");
+	strcpy(n.graffiti[3], "|   |  \\");
+	strcpy(n.graffiti[4], "|___|  /");
+	strcpy(n.graffiti[5], "      \\/ ");
+
+	alphabet[13] = n;
+
+	strcpy(o.graffiti[0], "        ");
+	strcpy(o.graffiti[1], "  ____  ");
+	strcpy(o.graffiti[2], " /  _ \\ ");
+	strcpy(o.graffiti[3], "(  <_> )");
+	strcpy(o.graffiti[4], " \\____/ ");
+	strcpy(o.graffiti[5], "        ");
+
+	alphabet[14] = o;
+
+//	strcpy(p.graffiti[0], "");
+//	strcpy(p.graffiti[1], "");
+//	strcpy(p.graffiti[2], "");
+//	strcpy(p.graffiti[3], "");
+//	strcpy(p.graffiti[4], "");
+//	strcpy(p.graffiti[5], "");
+//
+//	alphabet[15] = p;
+//
+//	strcpy(q.graffiti[0], "");
+//	strcpy(q.graffiti[1], "");
+//	strcpy(q.graffiti[2], "");
+//	strcpy(q.graffiti[3], "");
+//	strcpy(q.graffiti[4], "");
+//	strcpy(q.graffiti[5], "");
+//
+//	alphabet[16] = q;
+//
+//	strcpy(r.graffiti[0], "");
+//	strcpy(r.graffiti[1], "");
+//	strcpy(r.graffiti[2], "");
+//	strcpy(r.graffiti[3], "");
+//	strcpy(r.graffiti[4], "");
+//	strcpy(r.graffiti[5], "");
+//
+//	alphabet[17] = r;
+//
+//	strcpy(s.graffiti[0], "");
+//	strcpy(s.graffiti[1], "");
+//	strcpy(s.graffiti[2], "");
+//	strcpy(s.graffiti[3], "");
+//	strcpy(s.graffiti[4], "");
+//	strcpy(s.graffiti[5], "");
+//
+//	alphabet[18] = s;
+//
+//	strcpy(t.graffiti[0], "");
+//	strcpy(t.graffiti[1], "");
+//	strcpy(t.graffiti[2], "");
+//	strcpy(t.graffiti[3], "");
+//	strcpy(t.graffiti[4], "");
+//	strcpy(t.graffiti[5], "");
+//
+//	alphabet[19] = t;
+//
+//	strcpy(u.graffiti[0], "");
+//	strcpy(u.graffiti[1], "");
+//	strcpy(u.graffiti[2], "");
+//	strcpy(u.graffiti[3], "");
+//	strcpy(u.graffiti[4], "");
+//	strcpy(u.graffiti[5], "");
+//
+//	alphabet[20] = u;
+//
+//	strcpy(v.graffiti[0], "");
+//	strcpy(v.graffiti[1], "");
+//	strcpy(v.graffiti[2], "");
+//	strcpy(v.graffiti[3], "");
+//	strcpy(v.graffiti[4], "");
+//	strcpy(v.graffiti[5], "");
+//
+//	alphabet[21] = v;
+//
+//	strcpy(w.graffiti[0], "");
+//	strcpy(w.graffiti[1], "");
+//	strcpy(w.graffiti[2], "");
+//	strcpy(w.graffiti[3], "");
+//	strcpy(w.graffiti[4], "");
+//	strcpy(w.graffiti[5], "");
+//
+//	alphabet[22] = w;
+//
+//	strcpy(x.graffiti[0], "");
+//	strcpy(x.graffiti[1], "");
+//	strcpy(x.graffiti[2], "");
+//	strcpy(x.graffiti[3], "");
+//	strcpy(x.graffiti[4], "");
+//	strcpy(x.graffiti[5], "");
+//
+//	alphabet[23] = x;
+//
+//	strcpy(y.graffiti[0], "");
+//	strcpy(y.graffiti[1], "");
+//	strcpy(y.graffiti[2], "");
+//	strcpy(y.graffiti[3], "");
+//	strcpy(y.graffiti[4], "");
+//	strcpy(y.graffiti[5], "");
+//
+//	alphabet[24] = y;
+//
+//	strcpy(z.graffiti[0], "");
+//	strcpy(z.graffiti[1], "");
+//	strcpy(z.graffiti[2], "");
+//	strcpy(z.graffiti[3], "");
+//	strcpy(z.graffiti[4], "");
+//	strcpy(z.graffiti[5], "");
+//
+//	alphabet[25] = z;
     return alphabet;
 }
 
-void print_banner(char* text, char* font, char* color){
-    int graffiti = strcmp(font, "graffiti");
-    int nw_3d = strcmp(font, "nw_3d");
+void print_banner(char* text){
+
+    int i,j;
+    letra* alph;
+    alph = init_alphabet();
+    char* message = malloc(strlen(text)*54*sizeof(char));
+
+    printf("%ld\n", strlen(text));
+    for (i=0; i<6; i++){
+	for (j=0; j<strlen(text);j++){
+	    switch(text[j]){
+		case 'a':
+		    strcat(message, alph[0].graffiti[i]);
+		    break;
+		case 'b':
+		    strcat(message, alph[1].graffiti[i]);
+		    break;
+		case 'c':
+		    strcat(message, alph[2].graffiti[i]);
+		    break;
+		case 'd':
+		    strcat(message, alph[3].graffiti[i]);
+		    break;
+		case 'e':
+		    strcat(message, alph[4].graffiti[i]);
+		    break;
+		case 'f':
+		    strcat(message, alph[5].graffiti[i]);
+		    break;
+		case 'g':
+		    strcat(message, alph[6].graffiti[i]);
+		    break;
+		case 'h':
+		    strcat(message, alph[7].graffiti[i]);
+		    break;
+		case 'i':
+		    strcat(message, alph[8].graffiti[i]);
+		    break;
+	    }
+	strcat(message, "\n");
+	}
+
+    }
+    printf("%s\n", message);
+
+
 }

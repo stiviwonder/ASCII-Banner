@@ -5,4 +5,4 @@ typedef struct letter{
 }letra;
 
 letra* init_alphabet();
-void print_banner(char* text, char* font, char* color);
+void print_banner(char* text);
