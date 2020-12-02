@@ -1,6 +1,6 @@
 
 typedef struct letter{
-    char graffiti[6][9];          
+    char graffiti[6][10];          
     char nw_3d[10][11];
 }letra;
 
