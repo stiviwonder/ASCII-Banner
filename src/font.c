@@ -81,12 +81,12 @@ letra* init_alphabet(){
 
 	alphabet[7] = h;
 
-	strcpy(i.graffiti[0], ".__ ");
-	strcpy(i.graffiti[1], "|__|");
-	strcpy(i.graffiti[2], "|  |");
+	strcpy(i.graffiti[0], "    ");
+	strcpy(i.graffiti[1], ".__ ");
+	strcpy(i.graffiti[2], "|__|");
 	strcpy(i.graffiti[3], "|  |");
-	strcpy(i.graffiti[4], "|__|");
-	strcpy(i.graffiti[5], "    ");
+	strcpy(i.graffiti[4], "|  |");
+	strcpy(i.graffiti[5], "|__|");
 
 	alphabet[8] = i;
 
@@ -250,45 +250,64 @@ void print_banner(char* text){
     int i,j;
     letra* alph;
     alph = init_alphabet();
-    char* message = malloc(strlen(text)*54*sizeof(char));
+    char** message = (char**) malloc(strlen(text)*6*sizeof(char*));
+    for (i=0;i<strlen(text)*6;i++) message[i] = (char*) malloc(9*sizeof(char));
 
-    printf("%ld\n", strlen(text));
     for (i=0; i<6; i++){
+
 	for (j=0; j<strlen(text);j++){
 	    switch(text[j]){
 		case 'a':
-		    strcat(message, alph[0].graffiti[i]);
+		    strcat(message[i], alph[0].graffiti[i]);
 		    break;
 		case 'b':
-		    strcat(message, alph[1].graffiti[i]);
+		    strcat(message[i], alph[1].graffiti[i]);
 		    break;
 		case 'c':
-		    strcat(message, alph[2].graffiti[i]);
+		    strcat(message[i], alph[2].graffiti[i]);
 		    break;
 		case 'd':
-		    strcat(message, alph[3].graffiti[i]);
+		    strcat(message[i], alph[3].graffiti[i]);
 		    break;
 		case 'e':
-		    strcat(message, alph[4].graffiti[i]);
+		    strcat(message[i], alph[4].graffiti[i]);
 		    break;
 		case 'f':
-		    strcat(message, alph[5].graffiti[i]);
+		    strcat(message[i], alph[5].graffiti[i]);
 		    break;
 		case 'g':
-		    strcat(message, alph[6].graffiti[i]);
+		    strcat(message[i], alph[6].graffiti[i]);
 		    break;
 		case 'h':
-		    strcat(message, alph[7].graffiti[i]);
+		    strcat(message[i], alph[7].graffiti[i]);
 		    break;
 		case 'i':
-		    strcat(message, alph[8].graffiti[i]);
+		    strcat(message[i], alph[8].graffiti[i]);
+		    break;
+		case 'j':
+		    strcat(message[i], alph[9].graffiti[i]);
+		    break;
+		case 'k':
+		    strcat(message[i], alph[10].graffiti[i]);
+		    break;
+		case 'l':
+		    strcat(message[i], alph[11].graffiti[i]);
+		    break;
+		case 'm':
+		    strcat(message[i], alph[12].graffiti[i]);
+		    break;
+		case 'n':
+		    strcat(message[i], alph[13].graffiti[i]);
+		    break;
+		case 'o':
+		    strcat(message[i], alph[14].graffiti[i]);
 		    break;
 	    }
-	strcat(message, "\n");
 	}
-
+	printf("%s\n", message[i]);
     }
-    printf("%s\n", message);
-
 
 }
+
+
+
