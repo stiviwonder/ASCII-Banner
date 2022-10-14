@@ -4,308 +4,198 @@
 
 #include "../include/font.h"
 
-letra* init_alphabet(){
-    letra* alphabet = malloc(26*sizeof(struct letter));
-    int indx;
+alphabet_t init_alphabet(int row, int col){
+    alphabet_t alph;
 
-    letra a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z;
-	strcpy(a.graffiti[0], "        ");
-	strcpy(a.graffiti[1], "_____   ");
-	strcpy(a.graffiti[2], "\\__  \\  ");
-	strcpy(a.graffiti[3], " / __ \\_");
-	strcpy(a.graffiti[4], "(____  /");
-	strcpy(a.graffiti[5], "     \\/ ");
+    alph.letters = malloc(ALPH_SIZE*sizeof(letter_t));
+    alph.row = row;
+    alph.col = col;
 
-	alphabet[0] = a;
+    int i;
 
-	strcpy(b.graffiti[0], "___.    ");
-	strcpy(b.graffiti[1], "\\_ |__  ");
-	strcpy(b.graffiti[2], " | __ \\ ");
-	strcpy(b.graffiti[3], " | \\_\\ \\");
-	strcpy(b.graffiti[4], " |___  /");
-	strcpy(b.graffiti[5], "     \\/ ");
+    for (i=0; i<ALPH_SIZE; i++) {
+        alph.letters[i].icon = malloc(row*col*sizeof(char));
+    }
 
-	alphabet[1] = b;
-
-	strcpy(c.graffiti[0], "        ");
-	strcpy(c.graffiti[1], "  ____  ");
-	strcpy(c.graffiti[2], "_/ ___\\ ");
-	strcpy(c.graffiti[3], "\\  \\___ ");
-	strcpy(c.graffiti[4], " \\___  >");
-	strcpy(c.graffiti[5], "     \\/ ");
-
-	alphabet[2] = c;
-
-	strcpy(d.graffiti[0], "    .___");
-	strcpy(d.graffiti[1], "  __| _/");
-	strcpy(d.graffiti[2], " / __ | ");
-	strcpy(d.graffiti[3], "/ /_/ | ");
-	strcpy(d.graffiti[4], "\\____ | ");
-	strcpy(d.graffiti[5], "     \\/ ");
-
-	alphabet[3] = d;
-
-	strcpy(e.graffiti[0], "        ");
-	strcpy(e.graffiti[1], "  ____  ");
-	strcpy(e.graffiti[2], "_/ __ \\ ");
-	strcpy(e.graffiti[3], "\\  ___/ ");
-	strcpy(e.graffiti[4], " \\___  >");
-	strcpy(e.graffiti[5], "     \\/ ");
-
-	alphabet[4] = e;
-
-	strcpy(f.graffiti[0], "  _____ ");
-	strcpy(f.graffiti[1], "_/ ____\\");
-	strcpy(f.graffiti[2], "\\   __\\ ");
-	strcpy(f.graffiti[3], " |  |   ");
-	strcpy(f.graffiti[4], " |__|   ");
-	strcpy(f.graffiti[5], "        ");
-
-	alphabet[5] = f;
-
-	strcpy(g.graffiti[0], "        ");
-	strcpy(g.graffiti[1], "   ____  ");
-	strcpy(g.graffiti[2], "  / ___\\ ");
-	strcpy(g.graffiti[3], " / /_/  >");
-	strcpy(g.graffiti[4], " \\___  / ");
-	strcpy(g.graffiti[5], "/_____/  ");
-
-	alphabet[6] = g;
-
-	strcpy(h.graffiti[0], ".__     ");
-	strcpy(h.graffiti[1], "|  |__  ");
-	strcpy(h.graffiti[2], "|  |  \\ ");
-	strcpy(h.graffiti[3], "|   Y  \\");
-	strcpy(h.graffiti[4], "|___|  /");
-	strcpy(h.graffiti[5], "     \\/ ");
-
-	alphabet[7] = h;
-
-	strcpy(i.graffiti[0], "    ");
-	strcpy(i.graffiti[1], ".__ ");
-	strcpy(i.graffiti[2], "|__|");
-	strcpy(i.graffiti[3], "|  |");
-	strcpy(i.graffiti[4], "|  |");
-	strcpy(i.graffiti[5], "|__|");
-
-	alphabet[8] = i;
-
-	strcpy(j.graffiti[0], "     __ ");
-	strcpy(j.graffiti[1], "    |__|");
-	strcpy(j.graffiti[2], "    |  |");
-	strcpy(j.graffiti[3], "    |  |");
-	strcpy(j.graffiti[4], "/\\__|  |");
-	strcpy(j.graffiti[5], "\\______|");
-
-	alphabet[9] = j;
-
-	strcpy(k.graffiti[0], " __    ");
-	strcpy(k.graffiti[1], "|  | __");
-	strcpy(k.graffiti[2], "|  |/ /");
-	strcpy(k.graffiti[3], "|    < ");
-	strcpy(k.graffiti[4], "|__|_ \\");
-	strcpy(k.graffiti[5], "     \\/");
-
-	alphabet[10] = k;
-
-	strcpy(l.graffiti[0], ".__   ");
-	strcpy(l.graffiti[1], "|  |  ");
-	strcpy(l.graffiti[2], "|  |  ");
-	strcpy(l.graffiti[3], "|  |  ");
-	strcpy(l.graffiti[4], "|  |__");
-	strcpy(l.graffiti[5], "|____/");
-
-	alphabet[11] = l;
-
-	strcpy(m.graffiti[0], "         ");
-	strcpy(m.graffiti[1], "  _____  ");
-	strcpy(m.graffiti[2], " /     \\ ");
-	strcpy(m.graffiti[3], "|  Y Y  \\");
-	strcpy(m.graffiti[4], "|__|_|  /");
-	strcpy(m.graffiti[5], "      \\/ ");
-
-	alphabet[12] = m;
-
-	strcpy(n.graffiti[0], "        ");
-	strcpy(n.graffiti[1], "  ____  ");
-	strcpy(n.graffiti[2], " /    \\ ");
-	strcpy(n.graffiti[3], "|   |  \\");
-	strcpy(n.graffiti[4], "|___|  /");
-	strcpy(n.graffiti[5], "      \\/ ");
-
-	alphabet[13] = n;
-
-	strcpy(o.graffiti[0], "        ");
-	strcpy(o.graffiti[1], "  ____  ");
-	strcpy(o.graffiti[2], " /  _ \\ ");
-	strcpy(o.graffiti[3], "(  <_> )");
-	strcpy(o.graffiti[4], " \\____/ ");
-	strcpy(o.graffiti[5], "        ");
-
-	alphabet[14] = o;
-
-//	strcpy(p.graffiti[0], "");
-//	strcpy(p.graffiti[1], "");
-//	strcpy(p.graffiti[2], "");
-//	strcpy(p.graffiti[3], "");
-//	strcpy(p.graffiti[4], "");
-//	strcpy(p.graffiti[5], "");
-//
-//	alphabet[15] = p;
-//
-//	strcpy(q.graffiti[0], "");
-//	strcpy(q.graffiti[1], "");
-//	strcpy(q.graffiti[2], "");
-//	strcpy(q.graffiti[3], "");
-//	strcpy(q.graffiti[4], "");
-//	strcpy(q.graffiti[5], "");
-//
-//	alphabet[16] = q;
-//
-//	strcpy(r.graffiti[0], "");
-//	strcpy(r.graffiti[1], "");
-//	strcpy(r.graffiti[2], "");
-//	strcpy(r.graffiti[3], "");
-//	strcpy(r.graffiti[4], "");
-//	strcpy(r.graffiti[5], "");
-//
-//	alphabet[17] = r;
-//
-//	strcpy(s.graffiti[0], "");
-//	strcpy(s.graffiti[1], "");
-//	strcpy(s.graffiti[2], "");
-//	strcpy(s.graffiti[3], "");
-//	strcpy(s.graffiti[4], "");
-//	strcpy(s.graffiti[5], "");
-//
-//	alphabet[18] = s;
-//
-//	strcpy(t.graffiti[0], "");
-//	strcpy(t.graffiti[1], "");
-//	strcpy(t.graffiti[2], "");
-//	strcpy(t.graffiti[3], "");
-//	strcpy(t.graffiti[4], "");
-//	strcpy(t.graffiti[5], "");
-//
-//	alphabet[19] = t;
-//
-//	strcpy(u.graffiti[0], "");
-//	strcpy(u.graffiti[1], "");
-//	strcpy(u.graffiti[2], "");
-//	strcpy(u.graffiti[3], "");
-//	strcpy(u.graffiti[4], "");
-//	strcpy(u.graffiti[5], "");
-//
-//	alphabet[20] = u;
-//
-//	strcpy(v.graffiti[0], "");
-//	strcpy(v.graffiti[1], "");
-//	strcpy(v.graffiti[2], "");
-//	strcpy(v.graffiti[3], "");
-//	strcpy(v.graffiti[4], "");
-//	strcpy(v.graffiti[5], "");
-//
-//	alphabet[21] = v;
-//
-//	strcpy(w.graffiti[0], "");
-//	strcpy(w.graffiti[1], "");
-//	strcpy(w.graffiti[2], "");
-//	strcpy(w.graffiti[3], "");
-//	strcpy(w.graffiti[4], "");
-//	strcpy(w.graffiti[5], "");
-//
-//	alphabet[22] = w;
-//
-//	strcpy(x.graffiti[0], "");
-//	strcpy(x.graffiti[1], "");
-//	strcpy(x.graffiti[2], "");
-//	strcpy(x.graffiti[3], "");
-//	strcpy(x.graffiti[4], "");
-//	strcpy(x.graffiti[5], "");
-//
-//	alphabet[23] = x;
-//
-//	strcpy(y.graffiti[0], "");
-//	strcpy(y.graffiti[1], "");
-//	strcpy(y.graffiti[2], "");
-//	strcpy(y.graffiti[3], "");
-//	strcpy(y.graffiti[4], "");
-//	strcpy(y.graffiti[5], "");
-//
-//	alphabet[24] = y;
-//
-//	strcpy(z.graffiti[0], "");
-//	strcpy(z.graffiti[1], "");
-//	strcpy(z.graffiti[2], "");
-//	strcpy(z.graffiti[3], "");
-//	strcpy(z.graffiti[4], "");
-//	strcpy(z.graffiti[5], "");
-//
-//	alphabet[25] = z;
-    return alphabet;
+    return alph;
 }
 
-void print_banner(char* text){
+void free_alph (alphabet_t alph){
+    int i;
+    for (i=0; i<ALPH_SIZE; i++)
+        free(alph.letters[i].icon);
+    free(alph.letters);
+}
+
+alphabet_t load_font(FILE *font){
+    int row, col;
+    int i, j, k;
+    size_t len;
+
+    printf("load fonts ...\n");
+
+    printf("scanning ...\n");
+    fscanf(font, "%d\n", &row);
+    fscanf(font, "%d\n", &col);
+
+    alphabet_t alph = init_alphabet(row, col);
+
+    printf("AA\n");
+    char *line;
+
+    i = 0;
+    j = 0;
+
+    printf("row: %d col: %d \n", row, col);
+
+    // read line
+    while (getline(&line, &len, font) != -1){
+//        printf("%s", line);
+
+        for (k=0; k<col; k++) {
+            alph.letters[i].icon[j*col + k] = line[k];
+        }
+        if (j == row){
+//            printf("i: %d j: %d \n",i,j);
+            i++;
+            j = 0;
+        }
+        j++;
+    }
+
+    for (i=0; i<ALPH_SIZE; i++) {
+        for(j=0; j<row; j++) {
+            for (k=0; k<col; k++) {
+                printf("%c", alph.letters[i].icon[j*col+k]);
+            }
+            newline;
+        }
+    }
+
+
+    fclose(font);
+
+    return alph;
+}
+
+void print_banner(char* text, char* font_name){
 
     int i,j;
-    letra* alph;
-    alph = init_alphabet();
-    char** message = (char**) malloc(strlen(text)*6*sizeof(char*));
-    for (i=0;i<strlen(text)*6;i++) message[i] = (char*) malloc(9*sizeof(char));
+    int row, col;
 
-    for (i=0; i<6; i++){
+    char file[30] = "fonts/";
+    strcat(file, font_name);
 
-	for (j=0; j<strlen(text);j++){
-	    switch(text[j]){
-		case 'a':
-		    strcat(message[i], alph[0].graffiti[i]);
-		    break;
-		case 'b':
-		    strcat(message[i], alph[1].graffiti[i]);
-		    break;
-		case 'c':
-		    strcat(message[i], alph[2].graffiti[i]);
-		    break;
-		case 'd':
-		    strcat(message[i], alph[3].graffiti[i]);
-		    break;
-		case 'e':
-		    strcat(message[i], alph[4].graffiti[i]);
-		    break;
-		case 'f':
-		    strcat(message[i], alph[5].graffiti[i]);
-		    break;
-		case 'g':
-		    strcat(message[i], alph[6].graffiti[i]);
-		    break;
-		case 'h':
-		    strcat(message[i], alph[7].graffiti[i]);
-		    break;
-		case 'i':
-		    strcat(message[i], alph[8].graffiti[i]);
-		    break;
-		case 'j':
-		    strcat(message[i], alph[9].graffiti[i]);
-		    break;
-		case 'k':
-		    strcat(message[i], alph[10].graffiti[i]);
-		    break;
-		case 'l':
-		    strcat(message[i], alph[11].graffiti[i]);
-		    break;
-		case 'm':
-		    strcat(message[i], alph[12].graffiti[i]);
-		    break;
-		case 'n':
-		    strcat(message[i], alph[13].graffiti[i]);
-		    break;
-		case 'o':
-		    strcat(message[i], alph[14].graffiti[i]);
-		    break;
-	    }
-	}
-	printf("%s\n", message[i]);
+    FILE *font = fopen(file, "r");
+    if (font == NULL){
+        fprintf(stderr, "[ERR] can't open file");
+        exit(-1);
     }
+
+    printf("scanning ...\n");
+    fscanf(font, "%d", &row);
+    fscanf(font, "%d", &col);
+
+    // Init 3d
+    char *** alphabet = (char***)malloc(ALPH_SIZE*sizeof(char **));
+    for (i=0; i<ALPH_SIZE; i++){
+        alphabet[i] = (char**) malloc(row*sizeof(char*));
+        for (j=0;j<row;j++)
+            alphabet[i][j] = malloc(col*sizeof(char));
+    }
+
+
+
+
+    /*-------------------------------------\\
+    //------	LOADING FONTS	-------\\
+    //-------------------------------------*/
+
+    //load_font(font, alphabet, row, col);
+    char line[50];
+
+    i = 0;
+    j = 0;
+    while (fgets(line, sizeof(line), font) != NULL ){
+        alphabet[i][j] = line;
+        //memcpy(alphabet[i][j], line, strlen(line)+1);
+        //strcpy(alphabet[i][j], line);
+        //printf("%s", alphabet[i][j]);
+        if (j == row){
+            i++;
+            j = 0;
+        }
+        j++;
+        //printf("i: %d j: %d \n",i,j);
+    }
+    printf("Font Loaded :)\n");
+    /*-------------------------------------\\
+    //-------------------------------------\\
+    //-------------------------------------*/
+
+
+
+
+    char** message = (char**) malloc(strlen(text)*row*sizeof(char*));
+    for (i=0;i<strlen(text)*row;i++) message[i] = (char*) malloc(col*sizeof(char));
+
+    //char** message = (char**) malloc(strlen(text)*100*sizeof(char*));
+    //for (i=0;i<strlen(text)*100;i++) message[i] = (char*) malloc(100*sizeof(char));
+
+    for (i=0; i<row; i++){
+
+        for (j=0; j<strlen(text);j++){
+            switch(text[j]){
+                case 'a':
+                    strcat(message[i], alphabet[0][i]);
+                    break;
+                case 'b':
+                    strcat(message[i], alphabet[1][i]);
+                    break;
+                case 'c':
+                    strcat(message[i], alphabet[2][i]);
+                    break;
+                case 'd':
+                    strcat(message[i], alphabet[3][i]);
+                    break;
+                case 'e':
+                    strcat(message[i], alphabet[4][i]);
+                    break;
+                case 'f':
+                    strcat(message[i], alphabet[5][i]);
+                    break;
+                case 'g':
+                    strcat(message[i], alphabet[6][i]);
+                    break;
+                case 'h':
+                    strcat(message[i], alphabet[7][i]);
+                    break;
+                case 'i':
+                    strcat(message[i], alphabet[8][i]);
+                    break;
+                case 'j':
+                    strcat(message[i], alphabet[9][i]);
+                    break;
+                case 'k':
+                    strcat(message[i], alphabet[10][i]);
+                    break;
+                case 'l':
+                    strcat(message[i], alphabet[11][i]);
+                    break;
+                case 'm':
+                    strcat(message[i], alphabet[12][i]);
+                    break;
+                case 'n':
+                    strcat(message[i], alphabet[13][i]);
+                    break;
+                case 'o':
+                    strcat(message[i], alphabet[14][i]);
+                    break;
+            }
+        }
+        //printf("%s\n", message[i]);
+    }
+    //free_alph();
 
 }
 
